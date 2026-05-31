@@ -94,7 +94,7 @@ function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="flex h-12 flex-1 items-center justify-center text-foreground transition-colors hover:bg-primary/10 hover:text-primary active:bg-primary/20"
+              className="flex h-8 flex-1 items-center justify-center text-foreground transition-colors hover:bg-primary/10 hover:text-primary active:bg-primary/20 [&_svg]:h-4 [&_svg]:w-4"
             >
               {link.icon}
             </a>
