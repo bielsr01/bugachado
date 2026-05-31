@@ -7,7 +7,7 @@ import instagramMono from "@/assets/social/instagram.png";
 import instagramBrand from "@/assets/social/instagram-1.png";
 import tiktokMono from "@/assets/social/tik-tok.png";
 import tiktokBrand from "@/assets/social/tiktok-1.png";
-import telegramBrand from "@/assets/social/telegrama-1.png";
+import telegramBrand from "@/assets/social/telegram-brand.png";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
