@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
+import logo from "@/assets/logo.png";
+import { Megaphone, Zap, Users, ShoppingBag, ArrowRight, CheckCircle2 } from "lucide-react";
+
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,208 +29,160 @@ export const Route = createFileRoute("/")({
 function CTAButton({
   children,
   variant = "primary",
+  className = "",
 }: {
   children: React.ReactNode;
   variant?: "primary" | "accent";
+  className?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-5 text-base md:text-lg font-extrabold tracking-tight transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto text-center text-primary-foreground animate-pulse-glow";
+    "inline-flex items-center justify-center gap-3 rounded-full px-8 py-5 text-lg font-black tracking-tight transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto text-center animate-pulse-glow";
   const bg =
     variant === "accent"
-      ? { background: "var(--gradient-urgent)", boxShadow: "var(--shadow-glow-accent)" }
-      : { background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" };
+      ? { background: "var(--gradient-urgent)", color: "white", boxShadow: "var(--shadow-glow-accent)" }
+      : { background: "var(--gradient-cta)", color: "var(--primary-foreground)", boxShadow: "var(--shadow-glow)" };
   return (
     <a
       href={landingConfig.groupUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={base}
+      className={`${base} ${className}`}
       style={bg}
     >
       {children}
+      <ArrowRight className="w-5 h-5" />
+
     </a>
   );
 }
 
 function Landing() {
   return (
-    <main className="min-h-screen text-foreground" style={{ background: "var(--gradient-hero)" }}>
-      {/* HERO */}
-      <section className="relative overflow-hidden px-4 pt-10 pb-16 md:pt-20 md:pb-24">
-        <div
-          className="absolute inset-0 -z-10 opacity-30"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 20%, oklch(0.78 0.22 145 / 0.4), transparent 60%), radial-gradient(circle at 70% 80%, oklch(0.7 0.24 35 / 0.35), transparent 60%)",
-          }}
+    <main className="min-h-screen bg-background font-sans selection:bg-primary/30">
+      {/* HEADER / LOGO */}
+      <header className="flex justify-center pt-8 pb-4">
+        <img 
+          src={logo} 
+          alt="BugAchado Logo" 
+          className="h-32 md:h-48 drop-shadow-xl animate-float-up"
         />
-        <div className="mx-auto max-w-4xl text-center animate-float-up">
-          <span className="inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-2 text-xs md:text-sm font-bold text-accent uppercase tracking-wider">
-            🔥 Ofertas, Bugs e Erros de Preço Todos os Dias
+      </header>
+
+
+      {/* HERO */}
+      <section className="px-4 pb-12 md:pb-20 text-center animate-float-up [animation-delay:200ms]">
+        <div className="mx-auto max-w-3xl">
+          <span className="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-black text-accent uppercase tracking-widest mb-6">
+            🔥 100% Gratuito & Vitalício
           </span>
-          <h1 className="mt-6 text-5xl md:text-7xl font-black tracking-tighter leading-[0.95]">
-            PARE DE PAGAR <span className="text-accent">CARO!</span>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[1.1] text-foreground">
+            AS MELHORES <span className="text-primary italic">OFERTAS</span> <br />
+            DIRETO NO SEU WHATSAPP
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Entre para o grupo da <strong className="text-foreground">BugAchado</strong> e receba ofertas escondidas, cupons, bugs de preço e descontos reais das maiores lojas do Brasil.
+          <p className="mx-auto mt-6 max-w-xl text-base md:text-lg text-muted-foreground font-medium leading-relaxed">
+            Economize de verdade com bugs de preço, cupons exclusivos e promoções que duram poucos minutos.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-4">
-            <CTAButton>🟢 ENTRAR NO GRUPO GRATUITAMENTE</CTAButton>
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
-              <span>✅ Gratuito</span>
-              <span>✅ Sem spam</span>
-              <span>✅ Promoções todos os dias</span>
+          
+          <div className="mt-10 flex flex-col items-center gap-6">
+            <CTAButton className="min-w-[320px]">
+              QUERO ENTRAR NO GRUPO
+            </CTAButton>
+            
+            <div className="flex items-center gap-4 text-sm font-bold text-muted-foreground/80">
+              <span className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
+                Amazon
+              </span>
+              <span className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
+                M. Livre
+              </span>
+              <span className="flex items-center gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
+                Shopee
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CREDIBILIDADE */}
-      <section className="px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl md:text-5xl font-black tracking-tight">
-            Por que milhares acompanham a <span className="text-primary">BugAchado</span>?
-          </h2>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { e: "💥", t: "Bugs de Preço", d: "Achamos promoções fora do normal antes que acabem." },
-              { e: "⚡", t: "Ofertas Relâmpago", d: "Descontos que podem durar apenas alguns minutos." },
-              { e: "🛒", t: "Principais Lojas", d: "Amazon, Mercado Livre, Shopee, SHEIN, Magalu e muito mais." },
-              { e: "🎯", t: "Produtos Selecionados", d: "Somente ofertas que realmente valem a pena." },
-            ].map((c) => (
-              <article
-                key={c.t}
-                className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:-translate-y-1"
-              >
-                <div className="text-4xl">{c.e}</div>
-                <h3 className="mt-4 text-xl font-bold">{c.t}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
-              </article>
-            ))}
+      {/* PROVA SOCIAL / STATS SIMPLIFICADO */}
+      <section className="bg-white border-y border-border py-12 px-4">
+        <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <Users className="w-8 h-8 text-primary mb-2" />
+            <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.membros}</div>
+            <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Membros Ativos</div>
           </div>
+          <div className="hidden md:flex flex-col items-center">
+            <ShoppingBag className="w-8 h-8 text-primary mb-2" />
+            <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.ofertas}</div>
+            <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Ofertas Enviadas</div>
+          </div>
+          <div className="flex flex-col items-center">
+            <Zap className="w-8 h-8 text-primary mb-2" />
+            <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.diarias}</div>
+            <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Bugs Diários</div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* COMO FUNCIONA - SIMPLES */}
+      <section className="px-4 py-16 md:py-24 max-w-4xl mx-auto">
+        <h2 className="text-center text-3xl md:text-4xl font-black tracking-tight mb-12">
+          Como funciona?
+        </h2>
+        <div className="space-y-6">
+          {[
+            { n: "1", t: "Entre no Grupo", d: "Acesse pelo link e aguarde as notificações." },
+            { n: "2", t: "Receba as Ofertas", d: "Nossa equipe varre a internet 24h em busca de bugs." },
+            { n: "3", t: "Economize", d: "Clique no link e compre antes que o estoque acabe." },
+          ].map((s) => (
+            <div key={s.n} className="flex items-start gap-5 p-6 rounded-2xl bg-white shadow-sm border border-border group hover:border-primary transition-colors">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <CheckCircle2 className="w-6 h-6" />
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold">{s.t}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{s.d}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* URGÊNCIA */}
-      <section className="px-4 py-10">
-        <div
-          className="mx-auto max-w-4xl rounded-3xl p-8 md:p-10 text-center"
-          style={{ background: "var(--gradient-urgent)" }}
-        >
-          <div className="inline-block rounded-full bg-black/30 px-4 py-1 text-xs font-black tracking-widest text-white">
-            🚨 IMPORTANTE
+      <section className="px-4 pb-20">
+        <div className="mx-auto max-w-2xl rounded-[2rem] p-8 md:p-12 text-center bg-accent text-white shadow-xl">
+          <div className="flex justify-center mb-4">
+            <Megaphone className="w-10 h-10 text-white animate-bounce" />
           </div>
-          <p className="mt-4 text-xl md:text-2xl font-bold text-white leading-snug">
-            Muitas promoções acabam em <u>poucos minutos</u> após serem publicadas.
+          <p className="text-lg md:text-2xl font-black leading-tight">
+            NÃO FIQUE DE FORA!
           </p>
-          <p className="mt-2 text-white/90">
-            Se você entrar tarde, pode perder as melhores oportunidades.
+
+          <p className="mt-4 text-white/90 text-sm md:text-base font-medium">
+            Muitos produtos aparecem com até 90% de desconto por erro do sistema. 
+            Essas ofertas duram poucos segundos.
           </p>
-        </div>
-      </section>
-
-      {/* OFERTAS */}
-      <section className="px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl md:text-5xl font-black tracking-tight">
-            Exemplos de <span className="text-accent">ofertas reais</span>
-          </h2>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {landingConfig.produtos.map((p) => (
-              <article
-                key={p.nome}
-                className="rounded-2xl border border-border bg-card p-6 text-center transition-all hover:border-accent/60 hover:-translate-y-1"
-              >
-                <div className="text-6xl">{p.emoji}</div>
-                <h3 className="mt-4 font-bold">{p.nome}</h3>
-                <div className="mt-3 text-sm text-muted-foreground line-through">{p.de}</div>
-                <div className="mt-1 text-2xl font-black text-primary">{p.por}</div>
-                <span className="mt-3 inline-block rounded-full bg-accent/15 px-3 py-1 text-xs font-bold text-accent">
-                  OFERTA QUENTE 🔥
-                </span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* COMO FUNCIONA */}
-      <section className="px-4 py-16 md:py-24 bg-card/40">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-3xl md:text-5xl font-black tracking-tight">
-            Como funciona
-          </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {[
-              { n: "1", t: "Entre no grupo", d: "Clique no botão e participe gratuitamente." },
-              { n: "2", t: "Receba ofertas", d: "Promoções diárias direto no seu WhatsApp." },
-              { n: "3", t: "Aproveite", d: "Compre antes que a oferta acabe." },
-            ].map((s) => (
-              <div key={s.n} className="rounded-2xl border border-border bg-background p-8 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl font-black text-primary-foreground">
-                  {s.n}
-                </div>
-                <h3 className="mt-4 text-xl font-bold">{s.t}</h3>
-                <p className="mt-2 text-muted-foreground">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROVA SOCIAL */}
-      <section className="px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight">
-            A comunidade cresce <span className="text-primary">todos os dias</span>
-          </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {[
-              { e: "🔥", n: landingConfig.social.ofertas, l: "Ofertas compartilhadas" },
-              { e: "👥", n: landingConfig.social.membros, l: "Membros na comunidade" },
-              { e: "⚡", n: landingConfig.social.diarias, l: "Promoções por dia" },
-            ].map((s) => (
-              <div key={s.l} className="rounded-2xl border border-border bg-card p-8">
-                <div className="text-4xl">{s.e}</div>
-                <div className="mt-3 text-4xl md:text-5xl font-black text-primary">{s.n}</div>
-                <div className="mt-2 text-sm text-muted-foreground uppercase tracking-wider">
-                  {s.l}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL */}
-      <section className="px-4 py-20">
-        <div
-          className="mx-auto max-w-4xl rounded-3xl border border-primary/40 p-10 md:p-16 text-center"
-          style={{
-            background:
-              "linear-gradient(135deg, oklch(0.22 0.05 280), oklch(0.18 0.04 200))",
-          }}
-        >
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-            Você está a <span className="text-primary">um clique</span> das melhores promoções da internet.
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Entre gratuitamente agora e comece a economizar em suas próximas compras.
-          </p>
-          <div className="mt-10 flex justify-center">
-            <CTAButton variant="accent">🔥 QUERO ENTRAR NO GRUPO AGORA</CTAButton>
+          <div className="mt-8">
+            <CTAButton variant="primary" className="!bg-white !text-accent !shadow-none">
+              GARANTIR MINHA VAGA
+            </CTAButton>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-border px-4 py-10 text-center">
-        <div className="text-2xl font-black tracking-tighter">{landingConfig.siteName}</div>
-        <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-          Encontrando as melhores ofertas, bugs e promoções para você economizar todos os dias.
+      <footer className="border-t border-border px-4 py-12 text-center bg-white">
+        <img src={logo} alt="Logo" className="h-16 mx-auto mb-6 opacity-80" />
+        <p className="text-sm font-bold text-muted-foreground">
+          © {new Date().getFullYear()} BugAchado.com
         </p>
-        <p className="mt-6 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} BugAchado. Todos os direitos reservados.
+        <p className="mt-2 text-xs text-muted-foreground/60 max-w-xs mx-auto">
+          Encontramos as melhores ofertas para você. Não vendemos produtos, apenas facilitamos sua economia.
         </p>
       </footer>
     </main>
