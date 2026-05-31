@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
 import logo from "@/assets/logo.png";
-import { Clock, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 
 export const Route = createFileRoute("/")({
@@ -56,13 +56,8 @@ function Landing() {
       style={{ background: "var(--gradient-hero)" }}
     >
       <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-32 sm:pb-16">
-        {/* TOP URGENCY BADGE */}
-        <div className="flex justify-center animate-float-up">
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-[11px] sm:text-xs font-bold text-primary uppercase tracking-wider">
-            <Clock className="w-3.5 h-3.5" />
-            Vagas limitadas — grupo pode lotar
-          </span>
-        </div>
+
+
 
         {/* LOGO */}
         <header className="flex justify-center mt-6 animate-float-up [animation-delay:100ms]">
