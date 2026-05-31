@@ -53,7 +53,7 @@ function Landing() {
   return (
     <main
       className="min-h-screen font-sans selection:bg-primary/30"
-      style={{ background: "var(--gradient-hero)" }}
+      style={{ background: "#f1f3f5" }}
     >
       <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-32 sm:pb-16">
 
