@@ -4,24 +4,113 @@ import logo from "@/assets/logo.png";
 import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 
+const SITE_URL = "https://bugachado.lovable.app";
+const PAGE_TITLE = "BugAchado — Ofertas escondidas e bugs de preço com até 70% OFF";
+const PAGE_DESC =
+  "Receba cupons escondidos e ofertas relâmpago da Shopee, Amazon e Mercado Livre direto no seu WhatsApp. Sem spam, só desconto real. Entre grátis no grupo BugAchado.";
+const OG_IMAGE =
+  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5edc7ef7-0991-483f-8216-0a00dcf829dc/id-preview-4058a98d--10846f57-e55f-4602-9f3a-e6ef994939ca.lovable.app-1780201713711.png";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "BugAchado — Ofertas escondidas e bugs de preço todos os dias" },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
       {
-        name: "description",
+        name: "keywords",
         content:
-          "Receba cupons escondidos e ofertas relâmpago direto no seu WhatsApp. Sem spam, só desconto real. Entre no grupo da BugAchado.",
+          "ofertas, cupons, descontos, promoções, bug de preço, shopee, amazon, mercado livre, whatsapp, grupo de ofertas, achados",
       },
+      { name: "author", content: "BugAchado" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
-      { property: "og:title", content: "BugAchado — Ofertas escondidas todos os dias" },
-      {
-        property: "og:description",
-        content: "Cupons e bugs de preço com até 70% OFF direto no WhatsApp.",
-      },
+      { name: "theme-color", content: "#25D366" },
+      { name: "language", content: "pt-BR" },
+      // Open Graph
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:site_name", content: "BugAchado" },
+      { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:alt", content: "BugAchado — Ofertas escondidas todos os dias" },
+      // Twitter
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESC },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: `${SITE_URL}/`,
+              name: "BugAchado",
+              description: PAGE_DESC,
+              inLanguage: "pt-BR",
+            },
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "BugAchado",
+              url: SITE_URL,
+              logo: `${SITE_URL}/favicon.ico`,
+              sameAs: [
+                "https://instagram.com/bugachado",
+                "https://tiktok.com/@bugachado",
+                "https://t.me/bugachado",
+              ],
+            },
+            {
+              "@type": "WebPage",
+              "@id": `${SITE_URL}/#webpage`,
+              url: `${SITE_URL}/`,
+              name: PAGE_TITLE,
+              isPartOf: { "@id": `${SITE_URL}/#website` },
+              about: { "@id": `${SITE_URL}/#organization` },
+              description: PAGE_DESC,
+              inLanguage: "pt-BR",
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "O grupo é gratuito?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Sim. Entrar no grupo da BugAchado é 100% gratuito e você pode sair quando quiser.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Que tipo de ofertas vocês enviam?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Cupons escondidos, bugs de preço e ofertas relâmpago de Shopee, Amazon e Mercado Livre, com até 70% de desconto.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Vocês mandam spam?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Não. Só enviamos achados de verdade, sem encher seu WhatsApp.",
+                  },
+                },
+              ],
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: Landing,
 });
