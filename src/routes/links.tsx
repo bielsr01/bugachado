@@ -112,12 +112,12 @@ function LinksPage() {
               }}
             >
               <span
-                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-white"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white [&_svg]:h-5 [&_svg]:w-5"
                 style={{ backgroundColor: link.color }}
               >
                 {link.icon}
               </span>
-              <span className="flex-1 pr-4">{link.label}</span>
+              <span className="flex-1 text-left">{link.label}</span>
             </a>
           ))}
         </section>
