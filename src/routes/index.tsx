@@ -76,9 +76,6 @@ function Landing() {
               70% OFF
             </span>
           </p>
-          <p className="text-sm sm:text-base font-bold text-destructive/90 mt-1">
-            (algumas somem em minutos)
-          </p>
 
           <p className="mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed">
             Receba <strong className="text-foreground">cupons escondidos</strong> e{" "}
