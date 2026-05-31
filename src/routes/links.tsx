@@ -109,7 +109,7 @@ function LinksPage() {
             🛍️ Bug Achado 🛒
           </h1>
           <p className="mt-3 max-w-sm text-sm sm:text-base text-muted-foreground leading-relaxed">
-            🟡 BugAchado 🚀 Os melhores achados da internet reunidos em um só lugar 💰 Promoções, cupons e descontos que realmente valem a pena 📲 Entre e aproveite! 🔥
+            BugAchado 🚀 Os melhores achados da internet reunidos em um só lugar 💰 Promoções, cupons e descontos que realmente valem a pena 📲 Entre e aproveite! 🔥
           </p>
         </header>
 
