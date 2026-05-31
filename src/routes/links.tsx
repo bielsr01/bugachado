@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import logo from "@/assets/logo.png";
-import { Send, Instagram, Music2 } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
@@ -15,10 +15,39 @@ export const Route = createFileRoute("/links")({
   component: LinksPage,
 });
 
+const svgBase = {
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}>
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    <svg {...svgBase} className={className}>
+      <path d="M12 3a9 9 0 0 0-7.7 13.7L3 21l4.4-1.2A9 9 0 1 0 12 3Z" />
+      <path d="M8.5 8.8c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.5l.8 1.9c.1.3 0 .5-.1.7l-.4.4c-.2.2-.3.4-.1.7a6.3 6.3 0 0 0 3 2.8c.4.2.6.1.8-.1l.5-.6c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.4.4 0 .8-.4 1.6-.8 1.8a3 3 0 0 1-2.5.2c-1.6-.5-4.2-2-5.6-4.8a3.5 3.5 0 0 1-.5-1.8c0-.9.5-1.5.8-1.7l.1-.7Z" />
+    </svg>
+  );
+}
+
+function TelegramIcon({ className }: { className?: string }) {
+  return (
+    <svg {...svgBase} className={className}>
+      <path d="M21 4 2.5 11.2c-.6.2-.6 1 0 1.2l4.7 1.5L9 19.5c.2.6 1 .7 1.4.2l2.4-2.7 4.6 3.4c.5.4 1.2.1 1.3-.5L21.9 4.7c.1-.6-.4-1-.9-.7Z" />
+      <path d="m7.2 13.9 10.6-7.2-7.8 8.7" />
+    </svg>
+  );
+}
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg {...svgBase} className={className}>
+      <path d="M15 3v10.5a3.5 3.5 0 1 1-3.5-3.5" />
+      <path d="M15 3a4.5 4.5 0 0 0 4.5 4.5" />
     </svg>
   );
 }
@@ -42,19 +71,19 @@ const links: LinkItem[] = [
   {
     label: "CANAL NO TELEGRAM",
     href: "https://t.me/bugachado",
-    icon: <Send className="w-6 h-6" />,
+    icon: <TelegramIcon className="w-6 h-6" />,
     color: "#229ED9",
   },
   {
     label: "INSTAGRAM",
     href: "https://instagram.com/bugachado",
-    icon: <Instagram className="w-6 h-6" />,
+    icon: <Instagram className="w-6 h-6" strokeWidth={1.8} />,
     color: "#E1306C",
   },
   {
     label: "TIKTOK",
     href: "https://tiktok.com/@bugachado",
-    icon: <Music2 className="w-6 h-6" />,
+    icon: <TikTokIcon className="w-6 h-6" />,
     color: "#000000",
   },
 ];
