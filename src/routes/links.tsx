@@ -27,29 +27,34 @@ type LinkItem = {
   label: string;
   href: string;
   icon: React.ReactNode;
+  color: string;
   highlight?: boolean;
 };
 
 const links: LinkItem[] = [
   {
-    label: "Grupo do WhatsApp",
+    label: "GRUPO DE OFERTAS NO WHATSAPP",
     href: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
-    icon: <WhatsAppIcon className="w-5 h-5" />,
+    icon: <WhatsAppIcon className="w-6 h-6" />,
+    color: "#25D366",
   },
   {
-    label: "Canal do Telegram",
+    label: "CANAL NO TELEGRAM",
     href: "https://t.me/bugachado",
-    icon: <Send className="w-5 h-5" />,
+    icon: <Send className="w-6 h-6" />,
+    color: "#229ED9",
   },
   {
-    label: "Instagram @bugachado",
+    label: "INSTAGRAM",
     href: "https://instagram.com/bugachado",
-    icon: <Instagram className="w-5 h-5" />,
+    icon: <Instagram className="w-6 h-6" />,
+    color: "#E1306C",
   },
   {
-    label: "TikTok @bugachado",
+    label: "TIKTOK",
     href: "https://tiktok.com/@bugachado",
-    icon: <Music2 className="w-5 h-5" />,
+    icon: <Music2 className="w-6 h-6" />,
+    color: "#000000",
   },
 ];
 
