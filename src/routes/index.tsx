@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
 import logo from "@/assets/logo.png";
 import { Clock, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
+import { OffersCarousel } from "@/components/OffersCarousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,35 +96,17 @@ function Landing() {
           </div>
         </section>
 
-        {/* OFFERS GRID */}
+        {/* OFFERS CAROUSEL */}
         <section className="mt-14">
           <h2 className="text-center text-xl sm:text-2xl font-black tracking-tight text-foreground mb-6 px-2">
             🚨 Essas ofertas podem acabar a qualquer momento:
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {landingConfig.produtos.map((p) => (
-              <div
-                key={p.nome}
-                className="rounded-2xl bg-card p-4 shadow-sm border border-border hover:border-primary/50 transition-all"
-              >
-                <span className="inline-block text-[10px] font-black uppercase tracking-wider text-primary mb-2">
-                  {p.tag}
-                </span>
-                <div className="font-bold text-foreground">{p.nome}</div>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="text-xs line-through text-muted-foreground">{p.de}</span>
-                  <span className="text-xl font-black text-foreground">{p.por}</span>
-                  <span className="ml-auto text-xs font-black text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                    {p.off}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <OffersCarousel />
           <p className="text-center mt-4 text-xs font-bold text-muted-foreground">
             💥 Descontos reais enviados no grupo
           </p>
         </section>
+
 
         {/* TRUST BADGES */}
         <section className="mt-10 grid grid-cols-2 gap-3 text-sm">
