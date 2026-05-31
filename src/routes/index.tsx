@@ -46,7 +46,7 @@ function Landing() {
       className="min-h-screen font-sans selection:bg-primary/30"
       style={{ background: "var(--gradient-hero)" }}
     >
-      <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-16">
+      <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-32 sm:pb-16">
         {/* TOP URGENCY BADGE */}
         <div className="flex justify-center animate-float-up">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-[11px] sm:text-xs font-bold text-primary uppercase tracking-wider">
@@ -144,6 +144,21 @@ function Landing() {
           </div>
         </section>
 
+      </div>
+
+      {/* MOBILE STICKY CTA */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-50 sm:hidden px-4 pt-3 pb-[calc(env(safe-area-inset-bottom)+12px)] backdrop-blur-md bg-background/85 border-t border-border"
+      >
+        <a
+          href={landingConfig.groupUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="animate-pulse-glow block w-full rounded-2xl px-5 py-4 text-center text-base font-black tracking-tight text-white active:scale-[0.98] transition-transform"
+          style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
+        >
+          👉 LIBERAR ACESSO AO GRUPO AGORA
+        </a>
       </div>
     </main>
   );
