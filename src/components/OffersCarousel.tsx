@@ -49,6 +49,7 @@ export function OffersCarousel() {
         className="relative aspect-[3/4] overflow-hidden select-none cursor-grab active:cursor-grabbing"
         style={{ touchAction: "pan-y" }}
         onPointerDown={(e) => {
+          if ((e.target as HTMLElement).closest("button")) return;
           if (e.pointerType === "mouse") {
             (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
           }
@@ -57,7 +58,10 @@ export function OffersCarousel() {
         onPointerMove={(e) => onDragMove(e.clientX)}
         onPointerUp={onDragEnd}
         onPointerCancel={onDragEnd}
-        onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
+        onTouchStart={(e) => {
+          if ((e.target as HTMLElement).closest("button")) return;
+          onDragStart(e.touches[0].clientX);
+        }}
         onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
         onTouchEnd={onDragEnd}
       >
