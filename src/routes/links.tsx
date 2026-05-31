@@ -76,17 +76,12 @@ function LinksPage() {
                 "drop-shadow(0 0 14px oklch(0.68 0.20 150 / 0.6)) drop-shadow(0 0 26px oklch(0.68 0.20 150 / 0.3)) drop-shadow(0 10px 20px rgba(0,0,0,0.4))",
             }}
           />
-          <h1 className="mt-4 text-2xl sm:text-3xl font-black tracking-tight text-foreground">
-            @bugachado
+          <h1 className="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+            🛍️ Bug Achado 🛒
           </h1>
-          <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Ofertas escondidas, cupons secretos e bugs de preço todos os dias.
-            <br />
-            <span className="text-primary font-bold">Escolha seu canal favorito 👇</span>
-          </p>
         </header>
 
-        <section className="mx-auto mt-8 flex w-fit items-stretch justify-center overflow-hidden border-2 border-primary/40 bg-card divide-x-2 divide-primary/40">
+        <section className="mx-auto mt-5 flex w-fit items-center justify-center gap-6">
           {links.map((link) => (
             <a
               key={`icon-${link.label}`}
@@ -94,24 +89,22 @@ function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:bg-primary/10 hover:text-primary active:bg-primary/20 [&_svg]:h-5 [&_svg]:w-5"
+              className="flex items-center justify-center text-foreground/80 transition-colors hover:text-foreground [&_svg]:h-6 [&_svg]:w-6"
             >
               {link.icon}
             </a>
           ))}
         </section>
 
-        <section className="mt-5 flex flex-col gap-3">
+        <section className="mt-8 flex flex-col gap-4">
           {links.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`animate-float-up relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 bg-card pr-4 text-center text-sm font-black tracking-tight text-foreground transition-all active:scale-[0.98] hover:scale-[1.02] ${
-                link.highlight
-                  ? "animate-pulse-glow border-[#25D366]"
-                  : "border-primary/30 hover:border-primary/60"
+              className={`animate-float-up relative flex items-center gap-4 overflow-hidden rounded-full bg-card px-5 py-4 text-sm font-semibold tracking-tight text-foreground shadow-md transition-all active:scale-[0.98] hover:scale-[1.02] hover:shadow-lg ${
+                link.highlight ? "animate-pulse-glow" : ""
               }`}
               style={{
                 animationDelay: `${100 + i * 80}ms`,
@@ -119,12 +112,12 @@ function LinksPage() {
               }}
             >
               <span
-                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-white"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white [&_svg]:h-5 [&_svg]:w-5"
                 style={{ backgroundColor: link.color }}
               >
                 {link.icon}
               </span>
-              <span className="flex-1 pr-4">{link.label}</span>
+              <span className="flex-1 text-left">{link.label}</span>
             </a>
           ))}
         </section>
