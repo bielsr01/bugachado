@@ -26,15 +26,24 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
-function CTA({ label = "👉 LIBERAR ACESSO AO GRUPO AGORA" }: { label?: string }) {
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.494-1.404.143-.36.286-.62.286-.967 0-.358-.286-.43-.602-.587-.43-.187-1.46-.7-1.733-.7zM16.064 6.5c-5.273 0-9.547 4.274-9.547 9.547 0 1.793.5 3.55 1.453 5.064l-.913 4.357 4.486-.892a9.5 9.5 0 0 0 4.52 1.137h.005c5.273 0 9.547-4.274 9.547-9.547s-4.274-9.547-9.55-9.547zm0 17.27a7.7 7.7 0 0 1-3.943-1.084l-.283-.17-2.93.583.598-2.85-.184-.296a7.7 7.7 0 0 1-1.18-4.108c0-4.262 3.467-7.729 7.726-7.729 4.262 0 7.728 3.467 7.728 7.729s-3.467 7.729-7.728 7.729z"/>
+    </svg>
+  );
+}
+
+function CTA({ label = "LIBERAR ACESSO AO GRUPO AGORA" }: { label?: string }) {
   return (
     <a
       href={landingConfig.groupUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="animate-pulse-glow block w-full rounded-2xl px-6 py-5 text-center text-base sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02]"
+      className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-5 text-center text-base sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02]"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
     >
+      <WhatsAppIcon className="w-6 h-6 flex-shrink-0" />
       {label}
     </a>
   );
@@ -164,10 +173,11 @@ function Landing() {
           href={landingConfig.groupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="animate-pulse-glow block w-full rounded-2xl px-5 py-4 text-center text-base font-black tracking-tight text-white active:scale-[0.98] transition-transform"
+          className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 text-center text-base font-black tracking-tight text-white active:scale-[0.98] transition-transform"
           style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
         >
-          👉 LIBERAR ACESSO AO GRUPO AGORA
+          <WhatsAppIcon className="w-5 h-5 flex-shrink-0" />
+          LIBERAR ACESSO AO GRUPO AGORA
         </a>
       </div>
     </main>
