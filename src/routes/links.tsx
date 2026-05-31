@@ -108,7 +108,11 @@ function LinksPage() {
           <h1 className="mt-4 text-3xl sm:text-4xl font-black tracking-tight text-foreground">
             🛍️ Bug Achado 🛒
           </h1>
+          <p className="mt-3 max-w-sm text-sm sm:text-base text-muted-foreground leading-relaxed">
+            🟡 BugAchado 🚀 Os melhores achados da internet reunidos em um só lugar 💰 Promoções, cupons e descontos que realmente valem a pena 📲 Entre e aproveite! 🔥
+          </p>
         </header>
+
 
         <section className="mx-auto mt-5 flex w-fit items-center justify-center gap-6">
           {links.map((link) => (
