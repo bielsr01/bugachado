@@ -7,7 +7,7 @@ import logoUrl from "@/assets/logo.png?url";
 import offer1Url from "@/assets/offer-1.jpg?url";
 
 const SITE_URL = "https://bugachado.lovable.app";
-const PAGE_TITLE = "BugAchado — Ofertas escondidas e bugs de preço com até 70% OFF";
+const PAGE_TITLE = "BugAchado | Bugs de preço e ofertas com até 70% OFF";
 const PAGE_DESC =
   "Receba cupons escondidos e ofertas relâmpago da Shopee, Amazon e Mercado Livre direto no seu WhatsApp. Sem spam, só desconto real. Entre grátis no grupo BugAchado.";
 const OG_IMAGE =

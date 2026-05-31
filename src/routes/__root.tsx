@@ -77,35 +77,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
-      { name: "description", content: "As melhores ofertas da internet você encontra aqui!" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
-      { property: "og:description", content: "As melhores ofertas da internet você encontra aqui!" },
+      { title: "BugAchado | Ofertas, cupons e promoções" },
+      {
+        name: "description",
+        content: "BugAchado reúne cupons escondidos, promoções e bugs de preço da Shopee, Amazon e Mercado Livre.",
+      },
+      { name: "application-name", content: "BugAchado" },
+      { name: "apple-mobile-web-app-title", content: "BugAchado" },
+      { name: "author", content: "BugAchado" },
+      { property: "og:title", content: "BugAchado | Ofertas, cupons e promoções" },
+      {
+        property: "og:description",
+        content: "BugAchado reúne cupons escondidos, promoções e bugs de preço da Shopee, Amazon e Mercado Livre.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "BugAchado" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
-      { name: "twitter:description", content: "As melhores ofertas da internet você encontra aqui!" },
+      { name: "twitter:title", content: "BugAchado | Ofertas, cupons e promoções" },
+      {
+        name: "twitter:description",
+        content: "BugAchado reúne cupons escondidos, promoções e bugs de preço da Shopee, Amazon e Mercado Livre.",
+      },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5edc7ef7-0991-483f-8216-0a00dcf829dc/id-preview-4058a98d--10846f57-e55f-4602-9f3a-e6ef994939ca.lovable.app-1780201713711.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5edc7ef7-0991-483f-8216-0a00dcf829dc/id-preview-4058a98d--10846f57-e55f-4602-9f3a-e6ef994939ca.lovable.app-1780201713711.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", sizes: "any" },
-      { rel: "shortcut icon", href: "/favicon.ico" },
-      { rel: "apple-touch-icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.ico?v=2", sizes: "any", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon-32x32.png?v=2", sizes: "32x32", type: "image/png" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=2", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2", sizes: "180x180" },
     ],
   }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
+function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
@@ -121,9 +132,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-    </QueryClientProvider>
+    <RootDocument>
+      <QueryClientProvider client={queryClient}>
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </QueryClientProvider>
+    </RootDocument>
   );
 }
