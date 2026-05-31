@@ -63,7 +63,7 @@ function Landing() {
             className="h-40 sm:h-52"
             style={{
               filter:
-                "drop-shadow(0 0 18px oklch(0.7 0.24 35 / 0.85)) drop-shadow(0 0 38px oklch(0.7 0.24 35 / 0.55)) drop-shadow(0 12px 24px rgba(0,0,0,0.45))",
+                "drop-shadow(0 0 10px oklch(0.7 0.24 35 / 0.35)) drop-shadow(0 8px 18px rgba(0,0,0,0.35))",
             }}
           />
         </header>
