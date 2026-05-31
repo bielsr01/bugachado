@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { landingConfig } from "@/config/landing";
+
 import logo from "@/assets/logo.png";
 import { Send, Instagram, Music2 } from "lucide-react";
 
