@@ -34,16 +34,16 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function CTA({ label = "LIBERAR ACESSO AO GRUPO AGORA" }: { label?: string }) {
+function CTA({ label = "LIBERAR ACESSO AO GRUPO" }: { label?: string }) {
   return (
     <a
       href={landingConfig.groupUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-5 text-center text-base sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02]"
+      className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-5 text-center text-sm sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02] whitespace-nowrap"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
     >
-      <WhatsAppIcon className="w-6 h-6 flex-shrink-0" />
+      <WhatsAppIcon className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
       {label}
     </a>
   );
