@@ -45,8 +45,8 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE_URL}/` },
-      { rel: "preload", as: "image", href: logoUrl, fetchpriority: "high" },
-      { rel: "preload", as: "image", href: offer1Url, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: logoUrl, fetchPriority: "high" },
+      { rel: "preload", as: "image", href: offer1Url, fetchPriority: "high" },
     ],
     scripts: [
       {
@@ -162,7 +162,7 @@ function Landing() {
             loading="eager"
             decoding="sync"
             // @ts-expect-error - fetchpriority is a valid HTML attribute
-            fetchpriority="high"
+            fetchPriority="high"
             className="h-40 sm:h-52"
             style={{
               filter:

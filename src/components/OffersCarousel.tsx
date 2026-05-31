@@ -73,7 +73,7 @@ export function OffersCarousel() {
             loading="eager"
             decoding={idx === 0 ? "sync" : "async"}
             // @ts-expect-error - fetchpriority is a valid HTML attribute
-            fetchpriority={idx === 0 ? "high" : "auto"}
+            fetchPriority={idx === 0 ? "high" : "auto"}
             className={`absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-out ${
               idx === i
                 ? "opacity-100 scale-100 translate-x-0"
