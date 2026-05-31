@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import img1 from "@/assets/offer-1.jpg";
 import img2 from "@/assets/offer-2.jpg";
@@ -25,9 +25,36 @@ export function OffersCarousel() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [i]);
 
+  const dragStartX = useRef<number | null>(null);
+  const dragDelta = useRef(0);
+
+  const onDragStart = (x: number) => {
+    dragStartX.current = x;
+    dragDelta.current = 0;
+  };
+  const onDragMove = (x: number) => {
+    if (dragStartX.current !== null) dragDelta.current = x - dragStartX.current;
+  };
+  const onDragEnd = () => {
+    if (dragStartX.current === null) return;
+    const d = dragDelta.current;
+    dragStartX.current = null;
+    dragDelta.current = 0;
+    if (Math.abs(d) > 40) go(d < 0 ? i + 1 : i - 1);
+  };
+
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="relative aspect-[3/4] overflow-hidden">
+      <div
+        className="relative aspect-[3/4] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
+        onPointerDown={(e) => {
+          (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+          onDragStart(e.clientX);
+        }}
+        onPointerMove={(e) => onDragMove(e.clientX)}
+        onPointerUp={onDragEnd}
+        onPointerCancel={onDragEnd}
+      >
         {images.map((src, idx) => (
           <img
             key={src}
