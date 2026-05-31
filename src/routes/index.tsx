@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
+import logo from "@/assets/logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,11 +58,12 @@ function Landing() {
       {/* HEADER / LOGO */}
       <header className="flex justify-center pt-8 pb-4">
         <img 
-          src="/src/assets/logo.png" 
+          src={logo} 
           alt="BugAchado Logo" 
           className="h-32 md:h-48 drop-shadow-xl animate-float-up"
         />
       </header>
+
 
       {/* HERO */}
       <section className="px-4 pb-12 md:pb-20 text-center animate-float-up [animation-delay:200ms]">
@@ -161,7 +164,7 @@ function Landing() {
 
       {/* FOOTER */}
       <footer className="border-t border-border px-4 py-12 text-center bg-white">
-        <img src="/src/assets/logo.png" alt="Logo" className="h-16 mx-auto mb-6 opacity-80" />
+        <img src={logo} alt="Logo" className="h-16 mx-auto mb-6 opacity-80" />
         <p className="text-sm font-bold text-muted-foreground">
           © {new Date().getFullYear()} BugAchado.com
         </p>
