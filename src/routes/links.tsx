@@ -37,6 +37,7 @@ const links: LinkItem[] = [
     href: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
     icon: <WhatsAppIcon className="w-6 h-6" />,
     color: "#25D366",
+    highlight: true,
   },
   {
     label: "CANAL NO TELEGRAM",
