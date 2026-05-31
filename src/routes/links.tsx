@@ -37,6 +37,7 @@ const links: LinkItem[] = [
     href: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
     icon: <WhatsAppIcon className="w-6 h-6" />,
     color: "#25D366",
+    highlight: true,
   },
   {
     label: "CANAL NO TELEGRAM",
@@ -107,8 +108,15 @@ function LinksPage() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="animate-float-up relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 border-primary/30 bg-card pr-4 text-center text-sm font-black tracking-tight text-foreground transition-all active:scale-[0.98] hover:scale-[1.02] hover:border-primary/60"
-              style={{ animationDelay: `${100 + i * 80}ms` }}
+              className={`animate-float-up relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 bg-card pr-4 text-center text-sm font-black tracking-tight text-foreground transition-all active:scale-[0.98] hover:scale-[1.02] ${
+                link.highlight
+                  ? "animate-pulse-glow border-[#25D366]"
+                  : "border-primary/30 hover:border-primary/60"
+              }`}
+              style={{
+                animationDelay: `${100 + i * 80}ms`,
+                ...(link.highlight ? { boxShadow: "0 0 0 0 rgba(37,211,102,0.7)" } : {}),
+              }}
             >
               <span
                 className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-white"
