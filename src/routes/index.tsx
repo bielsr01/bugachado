@@ -82,11 +82,7 @@ function Landing() {
 
           <div className="mt-8">
             <CTA />
-            <p className="mt-3 flex items-center justify-center gap-1.5 text-xs font-bold text-destructive">
-              <AlertTriangle className="w-3.5 h-3.5" />
-              As melhores ofertas acabam em minutos
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground font-medium">
+            <p className="mt-3 text-xs text-muted-foreground font-medium">
               ✅ Gratuito · Sem spam · Saia quando quiser
             </p>
           </div>
