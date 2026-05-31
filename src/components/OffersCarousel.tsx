@@ -46,14 +46,20 @@ export function OffersCarousel() {
   return (
     <div className="relative mx-auto w-full max-w-md">
       <div
-        className="relative aspect-[3/4] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
+        className="relative aspect-[3/4] overflow-hidden select-none cursor-grab active:cursor-grabbing"
+        style={{ touchAction: "pan-y" }}
         onPointerDown={(e) => {
-          (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+          if (e.pointerType === "mouse") {
+            (e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId);
+          }
           onDragStart(e.clientX);
         }}
         onPointerMove={(e) => onDragMove(e.clientX)}
         onPointerUp={onDragEnd}
         onPointerCancel={onDragEnd}
+        onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
+        onTouchMove={(e) => onDragMove(e.touches[0].clientX)}
+        onTouchEnd={onDragEnd}
       >
         {images.map((src, idx) => (
           <img
