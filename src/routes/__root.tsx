@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
+      { name: "description", content: "As melhores ofertas da internet você encontra aqui!" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
+      { property: "og:description", content: "As melhores ofertas da internet você encontra aqui!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Bug Achado - Ofertas e Promoções - Shopee, Amazon e ML" },
+      { name: "twitter:description", content: "As melhores ofertas da internet você encontra aqui!" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5edc7ef7-0991-483f-8216-0a00dcf829dc/id-preview-4058a98d--10846f57-e55f-4602-9f3a-e6ef994939ca.lovable.app-1780201713711.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5edc7ef7-0991-483f-8216-0a00dcf829dc/id-preview-4058a98d--10846f57-e55f-4602-9f3a-e6ef994939ca.lovable.app-1780201713711.png" },
     ],
     links: [
       {
