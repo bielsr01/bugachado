@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
 import logo from "@/assets/logo.png";
+import { Megaphone, Zap, Users, ShoppingBag, ArrowRight, CheckCircle2 } from "lucide-react";
+
 
 
 export const Route = createFileRoute("/")({
@@ -34,7 +36,7 @@ function CTAButton({
   className?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-8 py-5 text-lg font-black tracking-tight transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto text-center animate-pulse-glow";
+    "inline-flex items-center justify-center gap-3 rounded-full px-8 py-5 text-lg font-black tracking-tight transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto text-center animate-pulse-glow";
   const bg =
     variant === "accent"
       ? { background: "var(--gradient-urgent)", color: "white", boxShadow: "var(--shadow-glow-accent)" }
@@ -48,6 +50,8 @@ function CTAButton({
       style={bg}
     >
       {children}
+      <ArrowRight className="w-5 h-5" />
+
     </a>
   );
 }
@@ -103,22 +107,26 @@ function Landing() {
       </section>
 
       {/* PROVA SOCIAL / STATS SIMPLIFICADO */}
-      <section className="bg-card border-y border-border py-10 px-4">
+      <section className="bg-white border-y border-border py-12 px-4">
         <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-          <div>
+          <div className="flex flex-col items-center">
+            <Users className="w-8 h-8 text-primary mb-2" />
             <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.membros}</div>
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Membros Ativos</div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:flex flex-col items-center">
+            <ShoppingBag className="w-8 h-8 text-primary mb-2" />
             <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.ofertas}</div>
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Ofertas Enviadas</div>
           </div>
-          <div>
+          <div className="flex flex-col items-center">
+            <Zap className="w-8 h-8 text-primary mb-2" />
             <div className="text-3xl md:text-4xl font-black text-primary">{landingConfig.social.diarias}</div>
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mt-1">Bugs Diários</div>
           </div>
         </div>
       </section>
+
 
       {/* COMO FUNCIONA - SIMPLES */}
       <section className="px-4 py-16 md:py-24 max-w-4xl mx-auto">
@@ -131,10 +139,11 @@ function Landing() {
             { n: "2", t: "Receba as Ofertas", d: "Nossa equipe varre a internet 24h em busca de bugs." },
             { n: "3", t: "Economize", d: "Clique no link e compre antes que o estoque acabe." },
           ].map((s) => (
-            <div key={s.n} className="flex items-start gap-5 p-6 rounded-2xl bg-white shadow-sm border border-border">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center text-lg font-black">
-                {s.n}
+            <div key={s.n} className="flex items-start gap-5 p-6 rounded-2xl bg-white shadow-sm border border-border group hover:border-primary transition-colors">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <CheckCircle2 className="w-6 h-6" />
               </div>
+
               <div>
                 <h3 className="text-lg font-bold">{s.t}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{s.d}</p>
@@ -147,9 +156,13 @@ function Landing() {
       {/* URGÊNCIA */}
       <section className="px-4 pb-20">
         <div className="mx-auto max-w-2xl rounded-[2rem] p-8 md:p-12 text-center bg-accent text-white shadow-xl">
-          <p className="text-lg md:text-xl font-black leading-tight">
-            NÃO FIQUE DE FORA! 🚨
+          <div className="flex justify-center mb-4">
+            <Megaphone className="w-10 h-10 text-white animate-bounce" />
+          </div>
+          <p className="text-lg md:text-2xl font-black leading-tight">
+            NÃO FIQUE DE FORA!
           </p>
+
           <p className="mt-4 text-white/90 text-sm md:text-base font-medium">
             Muitos produtos aparecem com até 90% de desconto por erro do sistema. 
             Essas ofertas duram poucos segundos.
