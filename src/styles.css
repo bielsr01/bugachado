@@ -50,7 +50,7 @@
 :root {
   --radius: 1rem;
   /* Light theme based on logo colors */
-  --background: #F0FFEC;
+  --background: #F2FFF5;
   --foreground: oklch(0.12 0.02 260);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.12 0.02 260);
@@ -83,7 +83,7 @@
   --sidebar-border: oklch(0.9 0.02 260);
   --sidebar-ring: oklch(0.86 0.23 145);
 
-  --gradient-hero: linear-gradient(180deg, #F0FFEC 0%, #F0FFEC 100%);
+  --gradient-hero: linear-gradient(180deg, #F2FFF5 0%, #F2FFF5 100%);
   --gradient-cta: linear-gradient(135deg, oklch(0.78 0.20 150), oklch(0.55 0.18 152));
   --gradient-urgent: linear-gradient(135deg, oklch(0.72 0.25 40), oklch(0.65 0.26 25));
   --shadow-glow: 0 10px 40px oklch(0.68 0.20 150 / 0.5);
