@@ -86,7 +86,7 @@ function LinksPage() {
           </p>
         </header>
 
-        <section className="mx-auto mt-8 flex w-2/5 items-stretch justify-center overflow-hidden border-2 border-primary/40 bg-card divide-x-2 divide-primary/40">
+        <section className="mx-auto mt-8 flex w-fit items-stretch justify-center overflow-hidden border-2 border-primary/40 bg-card divide-x-2 divide-primary/40">
           {links.map((link) => (
             <a
               key={`icon-${link.label}`}
@@ -94,7 +94,7 @@ function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
-              className="flex h-8 flex-1 items-center justify-center text-foreground transition-colors hover:bg-primary/10 hover:text-primary active:bg-primary/20 [&_svg]:h-4 [&_svg]:w-4"
+              className="flex h-12 w-12 items-center justify-center text-foreground transition-colors hover:bg-primary/10 hover:text-primary active:bg-primary/20 [&_svg]:h-5 [&_svg]:w-5"
             >
               {link.icon}
             </a>
