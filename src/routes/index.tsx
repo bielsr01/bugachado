@@ -84,7 +84,9 @@ function Landing() {
           </p>
 
           <div className="mt-8">
-            <CTA />
+            <div className="hidden sm:block">
+              <CTA />
+            </div>
             <p className="mt-3 text-xs text-muted-foreground font-medium">
               ✅ Gratuito · Sem spam · Saia quando quiser
             </p>
