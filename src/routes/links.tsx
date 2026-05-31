@@ -33,7 +33,7 @@ type LinkItem = {
 const links: LinkItem[] = [
   {
     label: "Grupo do WhatsApp",
-    href: landingConfig.groupUrl,
+    href: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
     icon: <WhatsAppIcon className="w-5 h-5" />,
     highlight: true,
   },
@@ -43,12 +43,12 @@ const links: LinkItem[] = [
     icon: <Send className="w-5 h-5" />,
   },
   {
-    label: "Instagram",
+    label: "Instagram @bugachado",
     href: "https://instagram.com/bugachado",
     icon: <Instagram className="w-5 h-5" />,
   },
   {
-    label: "TikTok",
+    label: "TikTok @bugachado",
     href: "https://tiktok.com/@bugachado",
     icon: <Music2 className="w-5 h-5" />,
   },
