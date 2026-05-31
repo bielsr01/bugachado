@@ -56,19 +56,19 @@
   --card-foreground: oklch(0.12 0.02 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.12 0.02 260);
-  --primary: oklch(0.86 0.23 145); /* Bright Green from logo */
-  --primary-foreground: oklch(0.12 0.02 260);
-  --secondary: oklch(0.96 0.02 145);
+  --primary: oklch(0.7 0.24 35); /* Vivid Orange CTA */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.03 35);
   --secondary-foreground: oklch(0.12 0.02 260);
-  --muted: oklch(0.95 0.02 260);
+  --muted: oklch(0.96 0.01 260);
   --muted-foreground: oklch(0.45 0.03 260);
-  --accent: oklch(0.7 0.24 35); /* Orange from logo */
-  --accent-foreground: oklch(1 0 0);
+  --accent: oklch(0.86 0.23 145); /* Green from logo */
+  --accent-foreground: oklch(0.12 0.02 260);
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0.02 260);
-  --input: oklch(0.9 0.02 260);
-  --ring: oklch(0.86 0.23 145);
+  --border: oklch(0.92 0.01 260);
+  --input: oklch(0.92 0.01 260);
+  --ring: oklch(0.7 0.24 35);
   --chart-1: oklch(0.86 0.23 145);
   --chart-2: oklch(0.7 0.24 35);
   --chart-3: oklch(0.85 0.2 95);
@@ -83,16 +83,16 @@
   --sidebar-border: oklch(0.9 0.02 260);
   --sidebar-ring: oklch(0.86 0.23 145);
 
-  --gradient-hero: linear-gradient(180deg, oklch(0.99 0.01 95) 0%, oklch(0.96 0.03 95) 100%);
-  --gradient-cta: linear-gradient(135deg, oklch(0.86 0.23 145), oklch(0.8 0.25 155));
-  --gradient-urgent: linear-gradient(135deg, oklch(0.7 0.24 35), oklch(0.65 0.26 25));
-  --shadow-glow: 0 10px 30px oklch(0.86 0.23 145 / 0.3);
-  --shadow-glow-accent: 0 10px 30px oklch(0.7 0.24 35 / 0.3);
+  --gradient-hero: linear-gradient(180deg, oklch(0.99 0.01 95) 0%, oklch(0.97 0.03 50) 100%);
+  --gradient-cta: linear-gradient(135deg, oklch(0.72 0.25 40), oklch(0.65 0.26 25));
+  --gradient-urgent: linear-gradient(135deg, oklch(0.72 0.25 40), oklch(0.65 0.26 25));
+  --shadow-glow: 0 10px 40px oklch(0.7 0.24 35 / 0.45);
+  --shadow-glow-accent: 0 10px 30px oklch(0.86 0.23 145 / 0.3);
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px oklch(0.86 0.23 145 / 0.3); transform: scale(1); }
-  50% { box-shadow: 0 0 25px oklch(0.86 0.23 145 / 0.5); transform: scale(1.03); }
+  0%, 100% { box-shadow: 0 0 20px oklch(0.7 0.24 35 / 0.4); transform: scale(1); }
+  50% { box-shadow: 0 0 40px oklch(0.7 0.24 35 / 0.7); transform: scale(1.02); }
 }
 
 @keyframes float-up {

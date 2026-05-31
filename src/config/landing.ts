@@ -8,9 +8,9 @@ export const landingConfig = {
     diarias: "+85",
   },
   produtos: [
-    { emoji: "🎧", nome: "Fone Bluetooth", de: "R$ 199,90", por: "R$ 49,90" },
-    { emoji: "⌚", nome: "Smartwatch", de: "R$ 249,90", por: "R$ 79,90" },
-    { emoji: "🍳", nome: "Air Fryer", de: "R$ 499,90", por: "R$ 259,90" },
-    { emoji: "📱", nome: "Smartphone", de: "R$ 1.899,00", por: "R$ 1.299,00" },
+    { tag: "🔥 ESGOTANDO", nome: "Fone Bluetooth", de: "R$ 189", por: "R$ 47", off: "-75%" },
+    { tag: "⚡ OFERTA RELÂMPAGO", nome: "Air Fryer 4L", de: "R$ 349", por: "R$ 129", off: "-63%" },
+    { tag: "🚨 SUMIU RÁPIDO", nome: "Tênis Esportivo", de: "R$ 259", por: "R$ 79", off: "-69%" },
+    { tag: "💥 ACHADO DO DIA", nome: "Smartwatch", de: "R$ 499", por: "R$ 159", off: "-68%" },
   ],
 };
