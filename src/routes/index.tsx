@@ -67,8 +67,14 @@ function Landing() {
             <span className="text-primary">TODOS OS DIAS</span>
           </h1>
 
-          <p className="mt-5 text-lg sm:text-xl font-bold text-foreground/80">
-            Até <span className="text-primary">70% OFF</span> antes de viralizar
+          <p className="mt-5 text-2xl sm:text-4xl font-black tracking-tight text-foreground">
+            Até{" "}
+            <span
+              className="inline-block rounded-xl px-3 py-1 text-white"
+              style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
+            >
+              70% OFF
+            </span>
           </p>
           <p className="text-sm sm:text-base font-bold text-destructive/90 mt-1">
             (algumas somem em minutos)
