@@ -26,15 +26,15 @@ export function OffersCarousel() {
   }, [i]);
 
   return (
-    <div className="relative mx-auto w-full max-w-sm">
-      <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-card shadow-xl border border-border">
+    <div className="relative mx-auto w-full max-w-md">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-muted shadow-xl border border-border">
         {images.map((src, idx) => (
           <img
             key={src}
             src={src}
             alt={`Oferta ${idx + 1}`}
             loading={idx === 0 ? "eager" : "lazy"}
-            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-out ${
+            className={`absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-out ${
               idx === i
                 ? "opacity-100 scale-100 translate-x-0"
                 : idx === (i - 1 + images.length) % images.length
