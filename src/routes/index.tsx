@@ -3,6 +3,8 @@ import { landingConfig } from "@/config/landing";
 import logo from "@/assets/logo.png";
 import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
+import logoUrl from "@/assets/logo.png?url";
+import offer1Url from "@/assets/offer-1.jpg?url";
 
 const SITE_URL = "https://bugachado.lovable.app";
 const PAGE_TITLE = "BugAchado — Ofertas escondidas e bugs de preço com até 70% OFF";
@@ -41,7 +43,11 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: PAGE_DESC },
       { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    links: [
+      { rel: "canonical", href: `${SITE_URL}/` },
+      { rel: "preload", as: "image", href: logoUrl, fetchpriority: "high" },
+      { rel: "preload", as: "image", href: offer1Url, fetchpriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
