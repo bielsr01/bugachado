@@ -137,7 +137,7 @@ function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               className={`animate-float-up relative flex items-center gap-4 overflow-hidden rounded-full bg-card px-5 py-4 text-sm font-semibold tracking-tight text-foreground shadow-md transition-all active:scale-[0.98] hover:scale-[1.02] hover:shadow-lg ${
-                link.highlight ? "animate-pulse-glow" : ""
+                link.highlight ? "animate-pulse-glow border border-[#25D366]" : ""
               }`}
               style={{
                 animationDelay: `${100 + i * 80}ms`,
