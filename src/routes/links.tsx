@@ -8,6 +8,7 @@ import instagramBrand from "@/assets/social/instagram-1.png";
 import tiktokMono from "@/assets/social/tik-tok.png";
 import tiktokBrand from "@/assets/social/tiktok-1.png";
 import telegramBrand from "@/assets/social/telegram-brand.png";
+import telegramMono from "@/assets/social/telegrama-1.png";
 
 export const Route = createFileRoute("/links")({
   head: () => ({
@@ -40,7 +41,7 @@ const links: LinkItem[] = [
   {
     label: "CANAL NO TELEGRAM",
     href: "https://t.me/bugachado",
-    mono: telegramBrand,
+    mono: telegramMono,
     brand: telegramBrand,
   },
   {
