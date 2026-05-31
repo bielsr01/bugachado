@@ -99,7 +99,7 @@ function Landing() {
         {/* OFFERS CAROUSEL */}
         <section className="mt-14">
           <h2 className="text-center text-xl sm:text-2xl font-black tracking-tight text-foreground mb-6 px-2">
-            🚨 Essas ofertas podem acabar a qualquer momento:
+            🚨 Ofertas enviadas no grupo recentemente:
           </h2>
           <OffersCarousel />
           <p className="text-center mt-4 text-xs font-bold text-muted-foreground">
