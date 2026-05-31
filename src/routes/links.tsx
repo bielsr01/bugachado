@@ -107,23 +107,16 @@ function LinksPage() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                link.highlight
-                  ? "animate-pulse-glow animate-float-up flex items-center justify-center gap-3 rounded-2xl px-4 py-4 text-center text-base font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02]"
-                  : "animate-float-up flex items-center justify-center gap-3 rounded-2xl border-2 border-primary/30 bg-card px-4 py-4 text-center text-base font-bold text-foreground transition-all active:scale-[0.98] hover:scale-[1.02] hover:border-primary/60"
-              }
-              style={
-                link.highlight
-                  ? {
-                      background: "var(--gradient-cta)",
-                      boxShadow: "var(--shadow-glow)",
-                      animationDelay: `${100 + i * 80}ms`,
-                    }
-                  : { animationDelay: `${100 + i * 80}ms` }
-              }
+              className="animate-float-up relative flex items-center gap-3 overflow-hidden rounded-2xl border-2 border-primary/30 bg-card pr-4 text-center text-sm font-black tracking-tight text-foreground transition-all active:scale-[0.98] hover:scale-[1.02] hover:border-primary/60"
+              style={{ animationDelay: `${100 + i * 80}ms` }}
             >
-              {link.icon}
-              {link.label}
+              <span
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-white"
+                style={{ backgroundColor: link.color }}
+              >
+                {link.icon}
+              </span>
+              <span className="flex-1 pr-4">{link.label}</span>
             </a>
           ))}
         </section>
