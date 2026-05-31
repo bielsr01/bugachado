@@ -10,14 +10,73 @@ import tiktokBrand from "@/assets/social/tiktok-1.png";
 import telegramBrand from "@/assets/social/telegram-brand.png";
 import telegramMono from "@/assets/social/telegrama-1.png";
 
+const SITE_URL = "https://bugachado.lovable.app";
+const PAGE_TITLE = "BugAchado — Links oficiais: WhatsApp, Telegram, Instagram e TikTok";
+const PAGE_DESC =
+  "Todos os canais oficiais da BugAchado em um só lugar: grupo de ofertas no WhatsApp, canal no Telegram, Instagram e TikTok. Entre grátis e receba achados todo dia.";
+
 export const Route = createFileRoute("/links")({
   head: () => ({
     meta: [
-      { title: "BugAchado — Links" },
-      { name: "description", content: "Todos os canais oficiais da BugAchado em um só lugar." },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESC },
+      {
+        name: "keywords",
+        content:
+          "bugachado, links, whatsapp, telegram, instagram, tiktok, grupo de ofertas, cupons",
+      },
+      { name: "author", content: "BugAchado" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=5" },
+      { name: "theme-color", content: "#25D366" },
+      { name: "language", content: "pt-BR" },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: PAGE_DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/links` },
+      { property: "og:site_name", content: "BugAchado" },
+      { property: "og:locale", content: "pt_BR" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: PAGE_DESC },
     ],
-    links: [{ rel: "canonical", href: "/links" }],
+    links: [{ rel: "canonical", href: `${SITE_URL}/links` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Canais oficiais BugAchado",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Grupo de ofertas no WhatsApp",
+              url: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Canal no Telegram",
+              url: "https://t.me/bugachado",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Instagram",
+              url: "https://instagram.com/bugachado",
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "TikTok",
+              url: "https://tiktok.com/@bugachado",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   component: LinksPage,
 });
