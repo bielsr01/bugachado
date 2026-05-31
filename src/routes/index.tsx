@@ -159,6 +159,10 @@ function Landing() {
           <img
             src={logo}
             alt="BugAchado"
+            loading="eager"
+            decoding="sync"
+            // @ts-expect-error - fetchpriority is a valid HTML attribute
+            fetchpriority="high"
             className="h-40 sm:h-52"
             style={{
               filter:
