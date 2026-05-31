@@ -86,7 +86,7 @@ function LinksPage() {
           </p>
         </header>
 
-        <section className="mt-8 flex items-stretch justify-center overflow-hidden rounded-2xl border-2 border-primary/40 bg-card divide-x-2 divide-primary/40">
+        <section className="mx-auto mt-8 flex w-1/2 items-stretch justify-center overflow-hidden rounded-2xl border-2 border-primary/40 bg-card divide-x-2 divide-primary/40">
           {links.map((link) => (
             <a
               key={`icon-${link.label}`}
