@@ -46,7 +46,7 @@ function Landing() {
       className="min-h-screen font-sans selection:bg-primary/30"
       style={{ background: "var(--gradient-hero)" }}
     >
-      <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-16">
+      <div className="mx-auto w-full max-w-xl px-5 pt-6 pb-32 sm:pb-16">
         {/* TOP URGENCY BADGE */}
         <div className="flex justify-center animate-float-up">
           <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-[11px] sm:text-xs font-bold text-primary uppercase tracking-wider">
