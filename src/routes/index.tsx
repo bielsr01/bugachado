@@ -84,10 +84,10 @@ function Landing() {
             <span className="text-primary">TODOS OS DIAS</span>
           </h1>
 
-          <p className="mt-5 text-2xl sm:text-4xl font-black tracking-tight text-foreground">
-            Até{" "}
+          <p className="mt-5 text-2xl sm:text-4xl font-black tracking-tight text-foreground inline-flex items-center gap-2 flex-wrap justify-center">
+            <span>Até</span>
             <span
-              className="inline-block rounded-xl px-3 py-1 text-white"
+              className="inline-flex items-center rounded-xl px-3 py-1 leading-none text-white"
               style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
             >
               70% OFF
