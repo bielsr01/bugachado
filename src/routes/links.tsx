@@ -62,7 +62,7 @@ function LinksPage() {
   return (
     <main
       className="min-h-screen font-sans selection:bg-primary/30"
-      style={{ background: "var(--gradient-hero)" }}
+      style={{ background: "#f1f3f5" }}
     >
       <div className="mx-auto w-full max-w-md px-5 pt-10 pb-16">
         <header className="flex flex-col items-center text-center animate-float-up">
