@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
 import logo from "@/assets/logo.png";
-import { Clock, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 
 export const Route = createFileRoute("/")({
