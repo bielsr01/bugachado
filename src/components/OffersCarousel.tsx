@@ -27,7 +27,7 @@ export function OffersCarousel() {
 
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="relative aspect-[3/4] overflow-hidden rounded-3xl bg-muted shadow-xl border border-border">
+      <div className="relative aspect-[3/4] overflow-hidden">
         {images.map((src, idx) => (
           <img
             key={src}
