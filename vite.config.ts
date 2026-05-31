@@ -23,7 +23,14 @@ export default defineConfig({
     ? {
         nitro:
           preset === "vercel"
-            ? { preset, output: { dir: ".vercel/output" } }
+            ? {
+                preset,
+                output: {
+                  dir: ".vercel/output",
+                  publicDir: ".vercel/output/static",
+                  serverDir: ".vercel/output/functions/__nitro.func",
+                },
+              }
             : { preset },
       }
     : {}),
