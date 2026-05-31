@@ -40,7 +40,7 @@ const links: LinkItem[] = [
   {
     label: "CANAL NO TELEGRAM",
     href: "https://t.me/bugachado",
-    mono: telegramBrand,
+    mono: telegramMono,
     brand: telegramBrand,
   },
   {
