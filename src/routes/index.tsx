@@ -173,11 +173,11 @@ function Landing() {
           href={landingConfig.groupUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 text-center text-base font-black tracking-tight text-white active:scale-[0.98] transition-transform"
+          className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-3 py-4 text-center text-sm font-black tracking-tight text-white active:scale-[0.98] transition-transform whitespace-nowrap"
           style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
         >
           <WhatsAppIcon className="w-5 h-5 flex-shrink-0" />
-          LIBERAR ACESSO AO GRUPO AGORA
+          LIBERAR ACESSO AO GRUPO
         </a>
       </div>
     </main>
