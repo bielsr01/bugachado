@@ -35,7 +35,6 @@ const links: LinkItem[] = [
     label: "Grupo do WhatsApp",
     href: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
     icon: <WhatsAppIcon className="w-5 h-5" />,
-    highlight: true,
   },
   {
     label: "Canal do Telegram",
