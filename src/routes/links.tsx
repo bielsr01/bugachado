@@ -81,7 +81,22 @@ function LinksPage() {
           </p>
         </header>
 
-        <section className="mt-8 flex flex-col gap-3">
+        <section className="mt-8 flex items-center justify-center gap-3">
+          {links.map((link) => (
+            <a
+              key={`icon-${link.label}`}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/40 bg-card text-foreground transition-all hover:scale-110 hover:border-primary hover:text-primary active:scale-95"
+            >
+              {link.icon}
+            </a>
+          ))}
+        </section>
+
+        <section className="mt-5 flex flex-col gap-3">
           {links.map((link, i) => (
             <a
               key={link.label}
