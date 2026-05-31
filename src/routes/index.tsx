@@ -57,7 +57,12 @@ function Landing() {
 
         {/* LOGO */}
         <header className="flex justify-center mt-6 animate-float-up [animation-delay:100ms]">
-          <img src={logo} alt="BugAchado" className="h-28 sm:h-36 drop-shadow-md" />
+          <img
+            src={logo}
+            alt="BugAchado"
+            className="h-40 sm:h-52"
+            style={{ filter: "drop-shadow(0 12px 28px rgba(0,0,0,0.45)) drop-shadow(0 0 22px hsl(var(--primary) / 0.55))" }}
+          />
         </header>
 
         {/* HERO */}
