@@ -5,15 +5,16 @@ Este projeto usa TanStack Start + Nitro e suporta múltiplos alvos de deploy a p
 | Alvo | NITRO_PRESET | Comando de build |
 |------|--------------|------------------|
 | Lovable (Cloudflare) | _(não definir)_ | `bun run build` |
-| Vercel | `vercel` | `NITRO_PRESET=vercel bun run build` |
+| Vercel | `vercel` | `npm run build` |
 | EasyPanel / Docker / VPS (Node) | `node-server` | `NITRO_PRESET=node-server bun run build` |
 
 ## Vercel
 
 1. Importe o repositório no Vercel.
-2. O arquivo `vercel.json` já define `buildCommand` (`NITRO_PRESET=vercel bun run build`) e `outputDirectory` (`.vercel/output`).
-3. Configure as variáveis de ambiente `VITE_*` no painel da Vercel se necessário.
-4. Deploy. Nitro gera a saída no formato Vercel Build Output API automaticamente.
+2. O arquivo `vercel.json` já define `buildCommand` (`npm run build`), `installCommand` (`npm install`) e `outputDirectory` (`.vercel/output`).
+3. O `vite.config.ts` detecta automaticamente o ambiente da Vercel e ativa o preset `vercel` do Nitro.
+4. Configure as variáveis de ambiente `VITE_*` no painel da Vercel se necessário.
+5. Deploy. Nitro gera a saída no formato Vercel Build Output API automaticamente.
 
 ## EasyPanel (Docker)
 

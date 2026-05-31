@@ -8,10 +8,10 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Pick the Nitro deploy preset from env so the same codebase can be built for
 // Cloudflare (default / Lovable), Vercel, or a self-hosted Node server (EasyPanel/Docker).
-//   NITRO_PRESET=vercel       -> Vercel
-//   NITRO_PRESET=node-server  -> standalone Node server (EasyPanel / Docker / VPS)
-//   unset                      -> Lovable default (Cloudflare)
-const preset = process.env.NITRO_PRESET;
+//   VERCEL=1 or NITRO_PRESET=vercel -> Vercel
+//   NITRO_PRESET=node-server        -> standalone Node server (EasyPanel / Docker / VPS)
+//   unset                           -> Lovable default (Cloudflare)
+const preset = process.env.NITRO_PRESET ?? (process.env.VERCEL ? "vercel" : undefined);
 
 export default defineConfig({
   tanstackStart: {
