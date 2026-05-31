@@ -59,18 +59,19 @@ export function OffersCarousel() {
           <ChevronRight className="h-5 w-5" />
         </button>
 
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              aria-label={`Ir para imagem ${idx + 1}`}
-              onClick={() => go(idx)}
-              className={`h-1.5 rounded-full transition-all ${
-                idx === i ? "w-6 bg-primary" : "w-1.5 bg-white/70"
-              }`}
-            />
-          ))}
-        </div>
+      </div>
+
+      <div className="mt-4 flex justify-center gap-1.5">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            aria-label={`Ir para imagem ${idx + 1}`}
+            onClick={() => go(idx)}
+            className={`h-2 rounded-full transition-all ${
+              idx === i ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );
