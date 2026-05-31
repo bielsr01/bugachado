@@ -144,12 +144,6 @@ function Landing() {
           </div>
         </section>
 
-        {/* FOOTER */}
-        <footer className="mt-10 text-center">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {landingConfig.siteName}
-          </p>
-        </footer>
       </div>
     </main>
   );
