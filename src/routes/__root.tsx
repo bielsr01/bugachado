@@ -112,6 +112,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "shortcut icon", href: "/favicon.ico?v=2", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2", sizes: "180x180" },
     ],
+    scripts: [
+      { children: META_PIXEL_INIT },
+    ],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
