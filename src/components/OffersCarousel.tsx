@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import img1 from "@/assets/offer-1.jpg";
-import img2 from "@/assets/offer-2.jpg";
-import img3 from "@/assets/offer-3.jpg";
-import img4 from "@/assets/offer-4.jpg";
-import img5 from "@/assets/offer-5.jpg";
-import img6 from "@/assets/offer-6.jpg";
-import img7 from "@/assets/offer-7.jpg";
+import img1 from "@/assets/offer-1.webp";
+import img2 from "@/assets/offer-2.webp";
+import img3 from "@/assets/offer-3.webp";
+import img4 from "@/assets/offer-4.webp";
+import img5 from "@/assets/offer-5.webp";
+import img6 from "@/assets/offer-6.webp";
+import img7 from "@/assets/offer-7.webp";
 
 const images = [img1, img2, img3, img4, img5, img6, img7];
 
@@ -70,10 +70,11 @@ export function OffersCarousel() {
             key={src}
             src={src}
             alt={`Oferta ${idx + 1}`}
-            loading="eager"
+            loading={idx === 0 ? "eager" : "lazy"}
             decoding={idx === 0 ? "sync" : "async"}
-            
-            fetchPriority={idx === 0 ? "high" : "auto"}
+            fetchPriority={idx === 0 ? "high" : "low"}
+            width={900}
+            height={1200}
             className={`absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-out ${
               idx === i
                 ? "opacity-100 scale-100 translate-x-0"
