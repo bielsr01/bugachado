@@ -3,8 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
 import whatsappMono from "@/assets/social/whatsapp.png";
 import whatsappBrand from "@/assets/social/whatsapp-1.png";
-import instagramMono from "@/assets/social/instagram.png";
-import instagramBrand from "@/assets/social/instagram-1.png";
+import shopeeMono from "@/assets/social/shopee-mono.png";
+import shopeeBrand from "@/assets/social/shopee-brand.png";
 import tiktokMono from "@/assets/social/tik-tok.png";
 import tiktokBrand from "@/assets/social/tiktok-1.png";
 import telegramBrand from "@/assets/social/telegram-brand.png";
@@ -104,10 +104,10 @@ const links: LinkItem[] = [
     brand: telegramBrand,
   },
   {
-    label: "INSTAGRAM",
-    href: "https://instagram.com/bugachado",
-    mono: instagramMono,
-    brand: instagramBrand,
+    label: "CUPONS SHOPEE",
+    href: "https://s.shopee.com.br/9fIAw5nAzX",
+    mono: shopeeMono,
+    brand: shopeeBrand,
   },
   {
     label: "TIKTOK",
