@@ -275,6 +275,13 @@ function Landing() {
           href={landingConfig.groupUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackMetaEvent("Lead", {
+              content_name: "LIBERAR ACESSO AO GRUPO",
+              content_category: "whatsapp_group",
+              source: "sticky_mobile",
+            })
+          }
           className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-3 py-4 text-center text-sm font-black tracking-tight text-white active:scale-[0.98] transition-transform whitespace-nowrap"
           style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
         >
