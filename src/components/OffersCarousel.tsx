@@ -70,10 +70,11 @@ export function OffersCarousel() {
             key={src}
             src={src}
             alt={`Oferta ${idx + 1}`}
-            loading="eager"
+            loading={idx === 0 ? "eager" : "lazy"}
             decoding={idx === 0 ? "sync" : "async"}
-            
-            fetchPriority={idx === 0 ? "high" : "auto"}
+            fetchPriority={idx === 0 ? "high" : "low"}
+            width={900}
+            height={1200}
             className={`absolute inset-0 h-full w-full object-contain transition-all duration-700 ease-out ${
               idx === i
                 ? "opacity-100 scale-100 translate-x-0"
