@@ -5,6 +5,7 @@ import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 import logoUrl from "@/assets/logo.png?url";
 import offer1Url from "@/assets/offer-1.jpg?url";
+import { trackMetaEvent } from "@/lib/meta-pixel";
 
 const SITE_URL = "https://bugachado.lovable.app";
 const PAGE_TITLE = "BugAchado | Bugs de preço e ofertas com até 70% OFF";
@@ -129,12 +130,19 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function CTA({ label = "LIBERAR ACESSO AO GRUPO" }: { label?: string }) {
+function CTA({ label = "LIBERAR ACESSO AO GRUPO", location = "cta" }: { label?: string; location?: string }) {
   return (
     <a
       href={landingConfig.groupUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() =>
+        trackMetaEvent("Lead", {
+          content_name: label,
+          content_category: "whatsapp_group",
+          source: location,
+        })
+      }
       className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-5 text-center text-sm sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02] whitespace-nowrap"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
     >
@@ -267,6 +275,13 @@ function Landing() {
           href={landingConfig.groupUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() =>
+            trackMetaEvent("Lead", {
+              content_name: "LIBERAR ACESSO AO GRUPO",
+              content_category: "whatsapp_group",
+              source: "sticky_mobile",
+            })
+          }
           className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-3 py-4 text-center text-sm font-black tracking-tight text-white active:scale-[0.98] transition-transform whitespace-nowrap"
           style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
         >
