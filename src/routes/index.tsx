@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { landingConfig } from "@/config/landing";
+import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 import logo from "@/assets/logo.webp";
 import logoUrl from "@/assets/logo.webp?url";
 import offer1Url from "@/assets/offer-1.webp?url";
-import { trackMetaEvent } from "@/lib/meta-pixel";
 import { trackMetaEvent } from "@/lib/meta-pixel";
 
 const SITE_URL = "https://bugachado.lovable.app";
