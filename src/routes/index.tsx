@@ -5,6 +5,7 @@ import { AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { OffersCarousel } from "@/components/OffersCarousel";
 import logoUrl from "@/assets/logo.png?url";
 import offer1Url from "@/assets/offer-1.jpg?url";
+import { trackMetaEvent } from "@/lib/meta-pixel";
 
 const SITE_URL = "https://bugachado.lovable.app";
 const PAGE_TITLE = "BugAchado | Bugs de preço e ofertas com até 70% OFF";
