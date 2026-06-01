@@ -105,7 +105,7 @@ const links: LinkItem[] = [
   },
   {
     label: "CUPONS SHOPEE",
-    href: "https://s.shopee.com.br/9fIAw5nAzX",
+    href: "https://s.shopee.com.br/4ftV0EH5Hs",
     mono: shopeeMono,
     brand: shopeeBrand,
   },
