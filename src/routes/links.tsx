@@ -120,6 +120,12 @@ const links: LinkItem[] = [
   },
 ];
 
+function handleLinkClick(link: LinkItem) {
+  const isWhatsApp = link.href.includes("whatsapp.com") || link.href.includes("wa.me");
+  const eventName = isWhatsApp ? "Lead" : "Contact";
+  trackMetaEvent(eventName, { content_name: link.label, content_category: "social_link" });
+}
+
 function LinksPage() {
   return (
     <main
