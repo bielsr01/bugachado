@@ -128,6 +128,15 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -137,6 +146,21 @@ function RootDocument({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  const lastPathRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const fire = (path: string) => {
+      if (lastPathRef.current === path) return;
+      lastPathRef.current = path;
+      trackMetaEvent("PageView");
+    };
+    fire(window.location.pathname + window.location.search);
+    const unsub = router.subscribe("onResolved", ({ toLocation }) => {
+      fire(toLocation.pathname + (toLocation.searchStr ?? ""));
+    });
+    return () => unsub();
+  }, [router]);
 
   return (
     <RootDocument>
