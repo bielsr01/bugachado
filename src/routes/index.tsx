@@ -130,12 +130,19 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-function CTA({ label = "LIBERAR ACESSO AO GRUPO" }: { label?: string }) {
+function CTA({ label = "LIBERAR ACESSO AO GRUPO", location = "cta" }: { label?: string; location?: string }) {
   return (
     <a
       href={landingConfig.groupUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() =>
+        trackMetaEvent("Lead", {
+          content_name: label,
+          content_category: "whatsapp_group",
+          source: location,
+        })
+      }
       className="animate-pulse-glow flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-5 text-center text-sm sm:text-lg font-black tracking-tight text-white transition-transform active:scale-[0.98] hover:scale-[1.02] whitespace-nowrap"
       style={{ background: "var(--gradient-cta)", boxShadow: "var(--shadow-glow)" }}
     >
