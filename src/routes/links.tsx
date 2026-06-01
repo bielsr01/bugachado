@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { trackMetaEvent } from "@/lib/meta-pixel";
+
+
 import logo from "@/assets/logo.png";
 import whatsappMono from "@/assets/social/whatsapp.png";
 import whatsappBrand from "@/assets/social/whatsapp-1.png";
