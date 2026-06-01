@@ -7,9 +7,13 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { trackMetaEvent } from "../lib/meta-pixel";
+
+const META_PIXEL_ID = "2254293718647799";
+const META_PIXEL_INIT = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');`;
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -108,6 +112,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "shortcut icon", href: "/favicon.ico?v=2", type: "image/x-icon" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2", sizes: "180x180" },
     ],
+    scripts: [
+      { children: META_PIXEL_INIT },
+    ],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -121,6 +128,15 @@ function RootDocument({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -130,6 +146,21 @@ function RootDocument({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  const lastPathRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const fire = (path: string) => {
+      if (lastPathRef.current === path) return;
+      lastPathRef.current = path;
+      trackMetaEvent("PageView");
+    };
+    fire(window.location.pathname + window.location.search);
+    const unsub = router.subscribe("onResolved", ({ toLocation }) => {
+      fire(toLocation.pathname + (toLocation.searchStr ?? ""));
+    });
+    return () => unsub();
+  }, [router]);
 
   return (
     <RootDocument>

@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { trackMetaEvent } from "@/lib/meta-pixel";
+
+
 import logo from "@/assets/logo.png";
 import whatsappMono from "@/assets/social/whatsapp.png";
 import whatsappBrand from "@/assets/social/whatsapp-1.png";
@@ -117,6 +120,12 @@ const links: LinkItem[] = [
   },
 ];
 
+function handleLinkClick(link: LinkItem) {
+  const isWhatsApp = link.href.includes("whatsapp.com") || link.href.includes("wa.me");
+  const eventName = isWhatsApp ? "Lead" : "Contact";
+  trackMetaEvent(eventName, { content_name: link.label, content_category: "social_link" });
+}
+
 function LinksPage() {
   return (
     <main
@@ -150,6 +159,7 @@ function LinksPage() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.label}
+              onClick={() => handleLinkClick(link)}
               className="flex items-center justify-center transition-opacity hover:opacity-70"
             >
               <img src={link.mono} alt="" className="h-7 w-7 object-contain" />
@@ -164,6 +174,7 @@ function LinksPage() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => handleLinkClick(link)}
               className={`animate-float-up relative flex items-center gap-4 overflow-hidden rounded-full bg-card px-5 py-3 text-sm font-semibold tracking-tight text-foreground shadow-md transition-all active:scale-[0.98] hover:scale-[1.02] hover:shadow-lg ${
                 link.highlight ? "animate-pulse-glow border border-[#25D366]" : ""
               }`}
