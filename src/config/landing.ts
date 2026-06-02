@@ -1,6 +1,6 @@
 // Edite estes valores para personalizar a landing page
 export const landingConfig = {
-  groupUrl: "https://chat.whatsapp.com/seu-grupo-aqui",
+  groupUrl: "https://chat.whatsapp.com/DwxGK3Wwfmy3XKqIgzr8qK?s=cl&p=i&mlu=2",
   siteName: "BUGACHADO.COM",
   social: {
     ofertas: "+12.480",
